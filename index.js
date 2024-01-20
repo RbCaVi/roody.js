@@ -2,6 +2,7 @@
 import * as discord from 'discord.js';
 import * as fs from 'node:fs'
 import * as path from 'node:path'
+import * as register from './register.js'
 const token=fs.readFileSync('token',{'encoding':'utf-8'});
 
 import { fileURLToPath } from "node:url";
@@ -18,12 +19,10 @@ const commandFiles = fs.readdirSync(foldersPath).filter(file => file.endsWith('.
 
 for (const file of commandFiles) {
 	const filePath = path.join(foldersPath, file);
-	const command = await import(filePath);
-	// Set a new item in the Collection with the key as the command name and the value as the exported module
-	if ('data' in command && 'execute' in command) {
-		client.commands.set(command.data.name, command);
-	} else {
-		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+	try{
+		register.registerCommand(client,filePath)
+	}catch(e){
+		console.log(e);
 	}
 }
 
