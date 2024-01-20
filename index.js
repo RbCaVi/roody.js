@@ -34,7 +34,7 @@ client.once(discord.Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
-client.on(discord.Events.InteractionCreate, interaction => {
+client.on(discord.Events.InteractionCreate, async interaction => {
 	console.log(interaction);
 	if (!interaction.isChatInputCommand()) return;
 
@@ -44,6 +44,8 @@ client.on(discord.Events.InteractionCreate, interaction => {
 		console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
 	}
+
+	console.log(command,interaction.commandName)
 
 	try {
 		await command.execute(interaction);
