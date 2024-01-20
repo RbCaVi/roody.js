@@ -9,7 +9,8 @@
   "author": "Robert Vail",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "^14.14.1",
+    "hot-esm": "^1.6.0"
   },
-  "type":"module"
+  "type": "module"
 }
