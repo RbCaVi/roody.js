@@ -17,11 +17,10 @@ const commandFiles = fs.readdirSync(foldersPath).filter(file => file.endsWith('.
 
 for (const file of commandFiles) {
   const filePath = path.join(foldersPath, file);
-  const command = await import(filePath);
-  if ('data' in command && 'execute' in command) {
-    commands.push(command.data.toJSON());
-  } else {
-    console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+  try{
+    commands.push(await register.getCommandData(client,filePath))
+  }catch(e){
+    console.log(e);
   }
 }
 
