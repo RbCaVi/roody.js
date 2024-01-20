@@ -34,7 +34,8 @@ try {
 
   // The put method is used to fully refresh all commands in the guild with the current set
   const data = await rest.put(
-    //discord.Routes.applicationGuildCommands(config.clientId, config.guildId),
+    config.registerGuildOnly?
+    discord.Routes.applicationGuildCommands(config.clientId, config.guildId):
     discord.Routes.applicationCommands(config.clientId),
     { body: commands },
   );
