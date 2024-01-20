@@ -1,0 +1,14 @@
+{
+  "name": "roodybot.js",
+  "version": "0.0.1",
+  "description": "A Discord bot for Roody:2D things",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Vail",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}
