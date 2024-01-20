@@ -20,7 +20,7 @@ const commandFiles = fs.readdirSync(foldersPath).filter(file => file.endsWith('.
 for (const file of commandFiles) {
 	const filePath = path.join(foldersPath, file);
 	try{
-		register.registerCommand(client,filePath)
+		await register.registerCommand(client,filePath)
 	}catch(e){
 		console.log(e);
 	}
@@ -35,7 +35,7 @@ client.once(discord.Events.ClientReady, readyClient => {
 });
 
 client.on(discord.Events.InteractionCreate, async interaction => {
-	console.log(interaction);
+	//console.log(interaction);
 	if (!interaction.isChatInputCommand()) return;
 
 	const command = interaction.client.commands.get(interaction.commandName);
@@ -45,7 +45,7 @@ client.on(discord.Events.InteractionCreate, async interaction => {
 		return;
 	}
 
-	console.log(command,interaction.commandName)
+	//console.log(command,interaction.commandName)
 
 	try {
 		await command.execute(interaction);
