@@ -13,6 +13,7 @@ const __dirname = path.dirname(__filename);
 const client = new discord.Client({ intents: [discord.GatewayIntentBits.Guilds] });
 
 client.commands = new discord.Collection();
+client.rest = new discord.REST().setToken(token);
 
 const foldersPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(foldersPath).filter(file => file.endsWith('.js'));
