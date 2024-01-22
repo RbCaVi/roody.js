@@ -9,8 +9,12 @@
   "author": "Robert Vail",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.11.2",
     "discord.js": "^14.14.1",
     "hot-esm": "^1.6.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
