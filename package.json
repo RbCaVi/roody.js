@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc block.ts -t esnext -m nodenext",
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "all": "npm run build&&npm test"
   },
   "author": "Robert Vail",
   "license": "ISC",
