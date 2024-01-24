@@ -15,7 +15,7 @@ async function execute(interaction) {
 	try {
 		interaction.client.commands.delete(commandName);
 		await register.registerCommand(interaction.client,`./commands/${commandName}.js`)
-		const commandData=await register.getCommandData(interaction.client,`./commands/${commandName}.js`)
+		const commandData=await register.getCommandData(`./commands/${commandName}.js`)
 	  console.log(`Started deploying ${commandName} application (/) command.`);
 
 	  // The post method is used to replace one command
