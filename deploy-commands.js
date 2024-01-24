@@ -2,7 +2,7 @@ import * as discord from 'discord.js';
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import {default as config} from './config.json' assert { type: "json" };
-const token=fs.readFileSync('token',{'encoding':'utf-8'});
+import {token} from './token.js'
 
 console.log(config)
 

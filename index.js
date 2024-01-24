@@ -3,7 +3,7 @@ import * as discord from 'discord.js';
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import * as register from './register.js'
-const token=fs.readFileSync('token',{'encoding':'utf-8'});
+import {token} from './token.js'
 
 import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
