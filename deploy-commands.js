@@ -1,6 +1,7 @@
 import * as discord from 'discord.js';
 import * as fs from 'node:fs'
 import * as path from 'node:path'
+import * as register from './register.js'
 import {default as config} from './config.json' assert { type: "json" };
 import {token} from './token.js'
 
@@ -18,7 +19,7 @@ const commandFiles = fs.readdirSync(foldersPath).filter(file => file.endsWith('.
 for (const file of commandFiles) {
   const filePath = path.join(foldersPath, file);
   try{
-    commands.push(await register.getCommandData(client,filePath))
+    commands.push(await register.getCommandData(filePath))
   }catch(e){
     console.log(e);
   }
