@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc block.ts -t esnext -m nodenext",
-    "start": "node index.js",
+    "start": "node --experimental-loader hot-esm index.js",
     "test": "node test.js",
     "all": "npm run build&&npm test"
   },
