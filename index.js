@@ -5,6 +5,10 @@ import * as path from 'node:path'
 import * as register from './register.js'
 import {token} from './token.js'
 
+import * as module from "node:module";
+import * as url from "node:url";
+module.register("hot-esm", url.pathToFileURL("./"));
+
 import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
