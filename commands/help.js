@@ -1,8 +1,8 @@
 import * as discord from "discord.js";
 
 const data = new discord.SlashCommandBuilder()
-  .setName("commands")
-  .setDescription("List all registered commands.");
+  .setName("help")
+  .setDescription("Get help about a command.");
 
 async function changeCommand(response,interaction){
   const command = interaction.client.commands.get(response.values[0]);
